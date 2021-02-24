@@ -1,7 +1,7 @@
 export interface Response {
-  documento: number;
-  nombres: string;
-  primerApellido: string;
-  segundoApellido: string;
-  edad: number;
+  Documento: number;
+  Nombres: string;
+  PrimerApellido: string;
+  SegundoApellido: string;
+  Edad: number;
 }
