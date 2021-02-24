@@ -7,7 +7,7 @@ import { ApiclienteService } from '../../Services/apicliente.service';
   templateUrl: './cliente.component.html',
   styleUrls: ['./cliente.component.scss']
 })
-export class ClienteComponent implements OnInit {
+export class ClienteComponent {
   public clientes: Response[];
   constructor(
     private apiCliente: ApiclienteService
