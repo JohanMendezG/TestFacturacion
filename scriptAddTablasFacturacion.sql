@@ -3,10 +3,13 @@ GO
 
 IF OBJECT_ID('ProductosXFactura') IS NOT NULL
 	DROP TABLE ProductosXFactura
+
 IF OBJECT_ID('Facturas') IS NOT NULL
 	DROP TABLE Facturas
+
 IF OBJECT_ID('Productos') IS NOT NULL
 	DROP TABLE Productos
+
 IF OBJECT_ID('Clientes') IS NOT NULL
 	DROP TABLE Clientes
 
@@ -16,19 +19,22 @@ Nombres VARCHAR(50) NOT NULL,
 PrimerApellido VARCHAR(20) NOT NULL,
 SegundoApellido VARCHAR(20) NOT NULL,
 Edad INT NOT NULL
-)
+);
+
 CREATE TABLE Productos(
 Id INT PRIMARY KEY IDENTITY,
 Nombre VARCHAR(50) NOT NULL,
 PrecioUnidad DECIMAL(10,2) NOT NULL,
 CantInventario INT NOT NULL
-)
+);
+
 CREATE TABLE Facturas(
 Id VARCHAR(5) PRIMARY KEY,
 Fecha DATETIME NOT NULL,
 ClienteId BIGINT NOT NULL,
 FOREIGN KEY(ClienteId) REFERENCES Clientes(Documento)
-)
+);
+
 CREATE TABLE ProductosXFactura(
 FacturaId VARCHAR(5) NOT NULL,
 ProductoId INT NOT NULL,
